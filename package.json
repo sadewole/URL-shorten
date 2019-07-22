@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A MERN app for shorten url",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "author": "SaMaDoR",
   "license": "MIT",
   "dependencies": {
