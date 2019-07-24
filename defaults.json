@@ -1,0 +1,6 @@
+{
+    "conf": {
+        "mongoURI": "mongodb://localhost:27017/shorten-url",
+        "baseUrl": "http://localhost:5000"
+    }
+}

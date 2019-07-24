@@ -12,7 +12,7 @@ app.use(express.urlencoded({
 }))
 
 // Define Routes
-// app.use('/api/v1', require('./route'))
+app.use('/api/v1', require('./route'))
 app.use('/api/v1/url', require('./route/url'))
 
 const PORT = 5000;
