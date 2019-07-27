@@ -9,11 +9,11 @@ connectDB()
 
 app.use(express.json())
 app.use(express.urlencoded({
-    extended: false
+    extended: true
 }))
 
 // Define Routes
-app.use('/api/v1', require('./route'))
+app.use('/', require('./route'))
 app.use('/api/v1/url', require('./route/url'))
 
 const PORT = 5000;

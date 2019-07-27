@@ -15,7 +15,9 @@ router.post('/shorten', async (req, res) => {
 
     // Check base url
     if (!validUrl.isUri(baseUrl)) {
-        return res.status(401).json('Invalid base Url')
+        return res.status(401).json({
+            msg: 'Invalid base Url'
+        })
     }
 
     // Create url code
@@ -45,12 +47,15 @@ router.post('/shorten', async (req, res) => {
                 res.json(url)
             }
         } catch (err) {
-            console.error(err);
-            res.status(500).json('Server error')
+            res.status(500).json({
+                msg: 'Server error'
+            })
 
         }
     } else {
-        res.status(401).json('Invalid long url')
+        res.status(401).json({
+            msg: 'Invalid long url'
+        })
     }
 })
 
