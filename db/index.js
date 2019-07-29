@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
+// local db
+// const mongoUrl = "mongodb://localhost:27017/shorten-url"
+
 const mongoUrl = process.env.mongoURI
 
 const connectDB = async () => {
