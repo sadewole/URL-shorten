@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Url = require('../model/url')
 
+
 // @route   GET /:code
 // @desc    Redirect to long/original url
 router.get('/:code', async (req, res) => {
