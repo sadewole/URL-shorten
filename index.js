@@ -10,7 +10,7 @@ connectDB()
 
 app.use(express.json())
 app.use(express.urlencoded({
-    extended: true
+    extended: false
 }))
 
 // Define Routes
