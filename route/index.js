@@ -11,6 +11,7 @@ router.get('/:code', async (req, res) => {
             urlCode: req.params.code
         })
 
+
         if (url) {
             return res.redirect(url.longUrl)
         } else {
