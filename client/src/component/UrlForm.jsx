@@ -68,7 +68,7 @@ export class FooterForm extends Component {
 
   render() {
     return (
-      <div className='footerform'>
+      <div>
         <TransitionGroup>
           {this.state.msg ? (
             <CSSTransition timeout={500} className='fade show'>
@@ -82,17 +82,16 @@ export class FooterForm extends Component {
             </CSSTransition>
           ) : null}
         </TransitionGroup>
-        <Form onSubmit={this.handleSubmit}>
-          <FormGroup>
-            <Input
-              type='text'
-              name='longUrl'
-              id='longUrl'
-              onChange={this.handleChange}
-              placeholder='Paste the link you want to shorten here.......'
-            />
-          </FormGroup>{' '}
-          <Button> Submit </Button>{' '}
+        <Form onSubmit={this.handleSubmit} className='form'>
+          <input
+            type='text'
+            name='longUrl'
+            id='longUrl'
+            onChange={this.handleChange}
+            placeholder='Paste the link you want to shorten here.......'
+            className='form-control'
+          />
+          <Button>Shorten</Button>{' '}
         </Form>{' '}
       </div>
     );
@@ -103,7 +102,4 @@ const mapStateToProps = state => ({
   newUrl: state.post
 });
 
-export default connect(
-  mapStateToProps,
-  { postURL }
-)(FooterForm);
+export default connect(mapStateToProps, { postURL })(FooterForm);
