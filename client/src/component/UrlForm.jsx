@@ -42,8 +42,10 @@ export class FooterForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
+    const { longUrl } = this.state;
+
     const newUrl = {
-      longUrl: this.state.longUrl
+      longUrl
     };
 
     this.props.postURL(newUrl);
@@ -68,7 +70,7 @@ export class FooterForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='group-url-form'>
         <TransitionGroup>
           {this.state.msg ? (
             <CSSTransition timeout={500} className='fade show'>
@@ -82,7 +84,7 @@ export class FooterForm extends Component {
             </CSSTransition>
           ) : null}
         </TransitionGroup>
-        <Form onSubmit={this.handleSubmit} className='form'>
+        <Form onSubmit={this.handleSubmit} className='url-form'>
           <input
             type='text'
             name='longUrl'
